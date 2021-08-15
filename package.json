@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --delay 2 server.js",
+    "start": "nodemon --delay 1.5 server.js",
     "seeds": "node seeds/index.js"
   },
   "repository": {
