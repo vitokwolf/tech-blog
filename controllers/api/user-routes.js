@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User, Post } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
     User.findAll({
-        // attributes: { exclude: ['password'] }
-        //will uncomment after testing
+        attributes: { exclude: ['password'] }
     })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
@@ -17,7 +16,7 @@ router.get('/', (req, res) => {
 // get one user by id
 router.get('/:id', (req, res) => {
     User.findOne({
-        // attributes: { exclude: ['password'] },
+        attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
         },
@@ -144,6 +143,5 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 
 module.exports = router;
