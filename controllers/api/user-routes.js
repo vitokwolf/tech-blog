@@ -43,13 +43,34 @@ router.get('/:id', (req, res) => {
 
 // create user
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
         password: req.body.password
     })
         .then(dbUserData => {
                 res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// update user 
+router.put('/:id', (req, res) => {
+    // pass in req.body instead to only update what's passed through
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+            res.json(dbUserData);
         })
         .catch(err => {
             console.log(err);
