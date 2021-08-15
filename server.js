@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // setup the server to use routes from controlers
-// app.use(require('./controllers/'));
+app.use(require('./controllers/'));
 
 // sync database and the server
 sequelize.sync({ force: false }).then(() => {
