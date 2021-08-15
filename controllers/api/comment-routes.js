@@ -12,7 +12,23 @@ router.get('/', (req, res) => {
 });
 
 // get single comment
-
+router.get('/:id', (req, res) => {
+    Comment.findOne({
+        where: {
+            id: req.params.id
+        },
+        include:
+        {
+            model: User,
+            attributes: ['username']
+        }
+    })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // create comment
 
