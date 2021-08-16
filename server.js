@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
+
 
 // create server/assign a port
 const app = express();
@@ -15,7 +17,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // setting up cookies
 const sess = {
      secret: process.env.SECRET,
-     cookie: { },
+     cookie: {},
      resave: false,
      saveUninitialized: true,
      store: new SequelizeStore({
@@ -26,7 +28,7 @@ const sess = {
 app.use(session(sess));
 
 // setting up handlebars as template engine
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -40,7 +42,7 @@ app.use(require('./controllers/'));
 
 // sync database and the server
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`
+     app.listen(PORT, () => console.log(`
                                         ========================================
                                              Now listening on PORT: ${PORT}
                                         ========================================`));
