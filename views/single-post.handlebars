@@ -1,18 +1,27 @@
-{{> post-info post}}
+<div class="columns is-centered is-mobile">
+  <div
+    class="column is-four-fifths-mobile is-four-fifths-tablet is-four-fifths-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+    <div class="panel is-light-gray">
+      {{> post-info post}}
+      {{#if loggedIn}}
+      <div class="columns is-centered is-mobile">
+        <div
+          class="column is-8">
+          <form class="comment-form">
+            <div>
+              <textarea class="textarea" name="comment-text"></textarea>
+            </div>
+            <button type="submit" class="comment-form button is-info" id="comment">Add comment</button>
+          </form>
+        </div>
+      </div>
+      {{/if}}
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
+      {{> comments post.comments}}
+
+    </div>
   </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-{{/if}}
-
-{{> comments post.comments}}
+</div>
 
 {{#if loggedIn}}
 <script src="/js/comment.js"></script>

@@ -1,19 +1,13 @@
-<form>
-  <div class="columns">
-    <div class="column is-1"></div>
-    <div class="column is-7 has-background-info-dark has-text-warning-light">
-      <a href="/post/{{id}}"><h1 class="is-size-4 ">{{title}}</h1></a>
-    </div>
-    <div class="column is-3 has-background-info-dark has-text-warning-light">
-      <h2>Posted by {{user.username}} on {{format_date created_at}} </h2>
-    </div>
-    <div class="column is-1"></div>
-  </div>
-  <div class="columns">
-    <div class="column is-1"></div>
-    <div class="column post-text">
-      <p>{{post_contents}}</p>
-    </div>
-    <div class="column is-1"></div>
-  </div>
-</form>
+<a href="/post/{{id}}">
+  <p class="panel-block">
+    <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+    <p class="is-size-3 has-text-left">{{title}}
+      <span class="is-size-5 has-text-right">
+        Posted by <span class="is-size-4">{{user.username}}</span> on {{format_date created_at}}
+      </span>
+    </p>
+  </p>
+  <p class="panel-block">{{post_contents}}</p>
+</a>

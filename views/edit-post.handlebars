@@ -1,33 +1,20 @@
-<article>
-  <a href="/dashboard"> &larr; Back to Dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{post.post_contents}})</span>
+<form>
+  <div class="columns is-centered is-mobile">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
+      <h1 class="has-text-weight-medium is-size-5">Edit Post</h1>
+      <h2>Post Title</h2>
+      <input class="input" type="text" id="post-title" name="post-title" value="{{post.title}}" />
+      <h3>Post</h3>
+      <textarea class ="textarea" name="post-contents">{{post.post_contents}}</textarea>
     </div>
-    <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-    </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-  </form>
-</article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
   </div>
-
-  <div>
-    <button type="submit">add comment</button>
+  <div class="columns is-centered is-mobile">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
+      <button type="submit" class="btn edit-post button is-success" id="edit-post">Save</button>
+      <button type="button" class="btn delete-post button is-danger" id="delete-post">Delete</button>
+    </div>
   </div>
 </form>
 
-{{> comments post.comments}}
-
 <script src="/js/edit-post.js"></script>
 <script src="/js/delete-post.js"></script>
-<script src="/js/comment.js"></script>

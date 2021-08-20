@@ -4,9 +4,6 @@ async function signupFormHandler(event) {
     const username = document.getElementById('username-signup').value.trim();
     const password = document.getElementById('password-signup').value.trim();
 
-    console.log(username)
-    console.log(password)
-
     if (username && password) {
         const response = await fetch('/api/users', {
             method: 'post',
@@ -24,4 +21,4 @@ async function signupFormHandler(event) {
     };
 };
 
-document.getElementById('signup').addEventListener('submit', signupFormHandler);
+document.getElementById('signup').addEventListener('click', signupFormHandler);

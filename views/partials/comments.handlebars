@@ -1,18 +1,16 @@
 <form>
-  <div class="columns">
-    <div class="column is-1"></div>
-    <div class="column">
+  <div class="columns is-centered is-mobile">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
       <h1 class="has-text-weight-medium is-size-5">Comments</h1>
       {{#each this}}
       <div>
-        <h2 class="is-size-6 has-background-info-dark has-text-warning-light">Posted by {{user.username}} on
+        <h2 class="is-size-6 has-background-grey-light">Posted by {{user.username}} on
           {{format_date created_at}} </h2>
         <div>
-          <p class="is-italic">{{comment_text}}</p>
+          <p class="has-text-warning has-background-grey-dark">{{comment_text}}</p>
         </div>
       </div>
       {{/each}}
     </div>
-    <div class="column is-1"></div>
   </div>
 </form>

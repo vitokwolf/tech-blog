@@ -1,7 +1,15 @@
-<ul>
-    {{#each posts as |post|}}
-    <li>
-        {{> post-info post}}
-    </li>
-    {{/each}}
-</ul>
+<div class="columns is-centered is-mobile">
+    <div
+        class="column is-four-fifths-mobile is-four-fifths-tablet is-four-fifths-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+        <div class="panel is-light-gray">
+
+            {{#if posts.length}}
+            {{#each posts as |post|}}
+
+            {{> post-info post}}
+
+            {{/each}}
+            {{/if}}
+        </div>
+    </div>
+</div>

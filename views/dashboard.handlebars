@@ -1,31 +1,37 @@
-<section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+<form>
+  {{!-- create new post --}}
+  <div class="columns is-centered is-mobile">
+    <div
+      class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
+      <h1 class="has-text-weight-medium is-size-5">Create New Post</h1>
+      <div>
+        <h2>Post Title</h2>
+        <input class="input" type="text" id="post-title" name="post-title" />
+        <h4>Post</h4>
+        <textarea class="textarea" name="post-contents"></textarea>
+      </div><br>
+      <button class="btn  button is-info" id='new-post'>Create Post</button>
     </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
+  </div>
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+  {{!-- list your post --}}
+  <div class="columns is-centered is-mobile">
+    <div
+      class="column is-four-fifths-mobile is-four-fifths-tablet is-four-fifths-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+      <div class="panel is-light-gray">
+        <p class="panel-heading"> Your Posts </p>
+
+        {{#if posts.length}}
+        {{#each posts as |post|}}
+
+        {{> post-info post}}
+
+        <a href="/dashboard/edit/{{post.id}}" class="button is-info"> Edit Post</a>
+        {{/each}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</form>
 
 <script src="/js/add-post.js"></script>
