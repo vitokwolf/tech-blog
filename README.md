@@ -16,9 +16,9 @@
   * [License](#license)
   * [Questions](#questions)
 
-   ![screenshot of tech blog website](public\img\login.png)
-   ![screenshot of tech blog website](public\img\dashboard.png)
-   ![screenshot of tech blog website](public\img\post.png)
+   ![screenshot of tech blog website](public/img/login.png)
+   ![screenshot of tech blog website](public/img/dashboard.png)
+   ![screenshot of tech blog website](public/img/post.png)
 
 
 ---
