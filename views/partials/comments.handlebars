@@ -1,12 +1,18 @@
-<div class="comments">
-  {{#each this}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{format_date created_at}}
+<form>
+  <div class="columns">
+    <div class="column is-1"></div>
+    <div class="column">
+      <h1 class="has-text-weight-medium is-size-5">Comments</h1>
+      {{#each this}}
+      <div>
+        <h2 class="is-size-6 has-background-info-dark has-text-warning-light">Posted by {{user.username}} on
+          {{format_date created_at}} </h2>
+        <div>
+          <p class="is-italic">{{comment_text}}</p>
+        </div>
+      </div>
+      {{/each}}
     </div>
-    <div class="text">
-      {{comment_text}}
-    </div>
-  </section>
-  {{/each}}
-</div>
+    <div class="column is-1"></div>
+  </div>
+</form>

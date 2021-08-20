@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
-        },        
+        },
         include: [
             {
                 model: Comment,
@@ -64,7 +64,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
-        post_url: req.body.post_url,
+        post_contents: req.body.post_contents,
         user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
@@ -76,10 +76,7 @@ router.post('/', withAuth, (req, res) => {
 
 // update post
 router.put('/:id', withAuth, (req, res) => {
-    Post.update(
-        {
-            title: req.body.title
-        },
+    Post.update(req.body,
         {
             where: {
                 id: req.params.id

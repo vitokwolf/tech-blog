@@ -1,19 +1,21 @@
-<div class="container">
-    <div class="col">
-        <form class="post-box" id="signup">
-            <h2>Signup</h2>
-            <div>
+<form >
+    <div class="columns">
+        <div class="column is-4"></div>
+        <div class="column is-4">
+            <h2 class="has-text-weight-medium is-size-5">Signup</h2>
+            <div class="field">
                 <label for="username-signup" class="user">Username:</label>
-                <input type="text" id="username-signup" />
+                <input class="input" type="text" placeholder="username" id="username-signup" />
             </div>
-            <div>
+            <div class="field">
                 <label for="password-signup" class="user">Password:</label>
-                <input type="password" id="password-signup" />
+                <input class="input" type="password" placeholder="password" id="password-signup" />
             </div>
             <div>
-                <button type="submit" class="btn">Signup</button>
+                <button type="submit" class="btn button is-info" id="signup">Signup</button>
             </div>
-        </form>
+        </div>
+        <div class="column is-4"></div>
     </div>
-</div>
+</form>
 <script src="/js/signup.js"></script>

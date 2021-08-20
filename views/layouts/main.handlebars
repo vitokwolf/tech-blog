@@ -6,32 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">Tech Blog</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">Dashboard</a>
-                <button id="logout" class="btn-no-style">Logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                <a href="/signup">Signup</a>
+    <!--navbar-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <p class=" logo is-size-3 is-uppercase has-text-weight-bold">Tech Blog</p>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <div class="home">
+                    <a href="/" class="navbar-item is-size-5">
+                        Home
+                    </a>
+                </div>
+                <div class="dashboard">
+                    {{#if loggedIn }}
+                    <a href="/dashboard" class="navbar-item is-size-5">
+                        Dashboard
+                    </a>
+                    {{else}}
+                    <a href="/login" class="navbar-item is-size-5">
+                        Dashboard
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+            {{!-- <div class="logout"> --}}
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        {{#if loggedIn }}
+                        <div class="buttons">
+                            <a class="button is-info btnLogout" id="logout">
+                                <strong>Logout</strong>
+                            </a>
+                        </div>
+                        {{else}}
 
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
+                        <div class="buttons">
+                            <a class="button is-info" href="/login"><strong>Login</strong></a>
+                            <a class="button is-info" href="/signup"><strong>Signup</strong></a>
+                        </div>
+                        {{/if}}
+
+                    </div>
+                </div>
+                {{!--
+            </div> --}}
+        </div>
+    </nav>
+
+    <!--main body-->
+    <main>
+        {{{body}}}
+    </main>
+    <div class="push"></div>
+    <!--footer-->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Tech Blog</strong>
+            </p>
+        </div>
+    </footer>
     </div>
 
 
