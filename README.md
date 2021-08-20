@@ -16,8 +16,10 @@
   * [License](#license)
   * [Questions](#questions)
 
-   ![screenshot of tech blog website]()
-   ![screenshot of tech blog website]()
+   ![screenshot of tech blog website](public\img\lit-fortress-39573.herokuapp.com_login.png)
+   ![screenshot of tech blog website](public\img\lit-fortress-39573.herokuapp.com_dashboard.png)
+   ![screenshot of tech blog website](public\img\lit-fortress-39573.herokuapp.com_post_1.png)
+
 
 ---
   ## Usage
@@ -36,5 +38,5 @@ This project is licensed under the MIT license.
   If you have any question or require any further information, feel free to contact me. 
   
   [GitHub page](https://github.com/vitokwolf)
-  
+
 victor.lupascu.1985@gmail.com
