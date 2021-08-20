@@ -16,9 +16,9 @@
   * [License](#license)
   * [Questions](#questions)
 
-   ![screenshot of tech blog website](public\img\lit-fortress-39573.herokuapp.com_login.png)
-   ![screenshot of tech blog website](public\img\lit-fortress-39573.herokuapp.com_dashboard.png)
-   ![screenshot of tech blog website](public\img\lit-fortress-39573.herokuapp.com_post_1.png)
+   ![screenshot of tech blog website](public\img\login.png)
+   ![screenshot of tech blog website](public\img\dashboard.png)
+   ![screenshot of tech blog website](public\img\post.png)
 
 
 ---
